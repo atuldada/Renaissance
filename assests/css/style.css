@@ -181,9 +181,9 @@ a {
 
 .prize_icon {
   background: url('../img/sprite.png');
-  background-position: -324px -402px;
+  background-position: -319px -402px;
   height: 82px;
-  width: 82px;
+  width: 85px;
 }
 .sponsors {
   height: 108px;
@@ -251,7 +251,7 @@ a {
 
 .prize_bar{
   float:left;
-  margin-left: 10px;
+  margin: -18px 0 0 28px;
 }
 
 .prize_icon{
@@ -261,4 +261,17 @@ a {
 .prize_text{
   float:left;
   padding: 10px;
+}
+
+.prize_title{
+  font-weight: 800;
+  font-size: 16px;
+  color: rgb(72, 73, 83);
+  margin-top: 5px;
+}
+
+.prize_amount{
+  font-weight: 600;
+  font-size: 22px;
+  color: rgb(103, 83, 245);
 }
