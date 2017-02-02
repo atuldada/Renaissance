@@ -16,6 +16,7 @@ body {
     src: url(../fonts/handy_cheera.woff);
 }
 
+
 @-webkit-keyframes backgroundScroll {
 from {background-position: 0 0;}
 to {background-position: -3820px 0;}
@@ -70,7 +71,9 @@ a {
   position: absolute;
   right:20px;
   top:10px;
+
 }
+
 .sun {
   background: url('../img/sprite.png');
   background-position: -165px -154px;
@@ -90,13 +93,14 @@ a {
   top:10px;
 }
 .helium_balloon {
-  bottom: 0px;
   background: url('../img/sprite.png');
   background-position: -292px -60px;
   height: 156px;
   width: 118px;
   right:20px;
   position: absolute;
+  -webkit-animation: balloon 12s linear infinite;
+  animation: balloon 12s linear infinite;
 }
 
 .floating_banner {
@@ -274,4 +278,16 @@ a {
   font-weight: 600;
   font-size: 22px;
   color: rgb(103, 83, 245);
+}
+
+/* Animations */
+/* Balloon Float Animation*/
+@keyframes balloon {
+    from {bottom: -15%;}
+    to {bottom: 100%;}
+}
+
+@-webkit-keyframes  balloon {
+    from {bottom: -15%;}
+    to {bottom: 100%;}
 }

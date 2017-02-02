@@ -43,7 +43,7 @@
         <div class="hot_balloon"></div>
         <div class="meteor"></div>
         <div class="sun"></div>
-        <div class="helium_balloon"></div>
+        <div class="helium_balloon" id="helium_balloon"></div>
       </div>
       <div class="main_body">
         <div class="row">
@@ -123,5 +123,12 @@
       </div>
     </div>
     <!--Content Ends-->
+    <!--Inline JS-->
+    <script>
+      $( document ).ready(function() {
+       $('#helium_balloon').trigger('startRumble');
+      });
+    </script>
+    <script src="assests/js/jquery.jrumble.1.3.min.js"></script>
   </body>
 </html>
