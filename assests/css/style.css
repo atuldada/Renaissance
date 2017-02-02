@@ -60,11 +60,11 @@ a {
   top: 131px;
   left: 2px;
   position: absolute;
-  -webkit-animation: plane 8s linear infinite;
-  animation: plane 8s linear infinite;
+  -webkit-animation: plane 5s linear infinite;
+  animation: plane 5s linear infinite;
 }
 #plane2{
-  background: transparent url("../img/sprite.png") repeat scroll -23px -173px;
+  background: transparent url("../img/sprite.png") repeat scroll -21px -173px;
 }
 #plane1{
   background: transparent url("../img/sprite.png") repeat scroll -88px -173px;
@@ -80,8 +80,8 @@ a {
   position: absolute;
   right:0%;
   top:10px;
-  -webkit-animation: hot_balloon 12s linear infinite;
-  animation: hot_balloon 12s linear infinite;
+  -webkit-animation: hot_balloon s 9linear infinite;
+  animation: hot_balloon 9s linear infinite;
 }
 
 .sun {
@@ -114,7 +114,7 @@ a {
   animation: meteor 10s linear infinite;
 }
 .helium_balloon {
-  right:20px;
+  right:6%;
   position: absolute;
   -webkit-animation: balloon 12s linear infinite;
   animation: balloon 12s linear infinite;
@@ -308,8 +308,10 @@ a {
 /* Animations */
 /* Balloon Float Animation*/
 @keyframes balloon {
-    from {bottom: -10%;}
-    to {bottom: 100%;}
+    from {bottom: -10%;
+    right:6%;}
+    to {bottom: 100%;
+    right:86%;}
 }
 
 @-webkit-keyframes  balloon {
@@ -355,8 +357,8 @@ a {
     width: 163px;
   }
   to {
-    right: 80%;
-    top:  80%;
+    right: 60%;
+    top: 60%;
     opacity: 50;
     max-height: 0px;
     width: 163px;
@@ -371,8 +373,8 @@ a {
     width: 163px;
   }
   to {
-    right: 80%;
-    top:  80%;
+    right: 60%;
+    top:  60%;
     max-height: 0px;
   }
 }
@@ -408,7 +410,7 @@ a {
   }
 }
 
-@-webkit-keyframes  sunfading {
+@-webkit-keyframes sunfading {
   from {
     border-radius: 0px;
     opacity: 100;
