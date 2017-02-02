@@ -147,18 +147,84 @@ a {
   height: 113px;
   width: 447px;
   position: relative;
+  left: 50.7%;
+  transform: translateX(-50%);
+}
+.arrow{
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.fa-chevron-up{
+  font-size: 40px !important;
+  color: white;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: #2762ff;
+  -webkit-animation: arrow 1s ease-out;
+  animation: arrow 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrow {
+	0%,100% {
+		transform:scale(1,1)
+	}
+	10% {
+		transform:scale(1.1,1.05)
+	}
+	50% {
+		transform:scale(1.33,1.36)
+	}
+}
+@-webkit-keyframes arrow {
+	0%,100% {
+		-webkit-transform:scale(1,1)
+	}
+	10% {
+		-webkit-transform:scale(1.1,1.1)
+	}
+	50% {
+		-webkit-transform:scale(1.33,1.36)
+	}
 }
 
 .renaissance_logo {
   background: url('../img/sprite.png');
   background-position: -368px -499px;
   height: 59px;
-  left: 50%;
+  left: 42%;
   position: relative;
   transform: translateX(-50%);
   width: 321px;
+  -webkit-animation: pulsate 1.5s linear;
+  animation: pulsate 1.5s linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulsate {
+	0%,100% {
+		transform:scale(1,1)
+	}
+	10% {
+		transform:scale(1.1,1.05)
+	}
+	50% {
+		transform:scale(1.13,1.16)
+	}
+}
+@-webkit-keyframes pulsate {
+	0%,100% {
+		-webkit-transform:scale(1,1)
+	}
+	10% {
+		-webkit-transform:scale(1.1,1.1)
+	}
+	50% {
+		-webkit-transform:scale(1.13,1.16)
+	}
 }
 
 .renaissance_date {
