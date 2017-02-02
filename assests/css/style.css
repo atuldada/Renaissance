@@ -328,8 +328,10 @@ a {
 }
 
 @-webkit-keyframes  balloon {
-    from {bottom: 0%;}
-    to {bottom: 100%;}
+    from {bottom: 0%;
+    right:6%;}
+    to {bottom: 100%;
+    right:86%;}
 }
 
 @keyframes plane {
