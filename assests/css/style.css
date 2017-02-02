@@ -60,8 +60,8 @@ a {
   top: 131px;
   left: 2px;
   position: absolute;
-  -webkit-animation: plane 5s linear infinite;
-  animation: plane 5s linear infinite;
+  -webkit-animation: plane 9s linear infinite;
+  animation: plane 9s linear infinite;
 }
 #plane2{
   background: transparent url("../img/sprite.png") repeat scroll -21px -173px;
@@ -80,8 +80,8 @@ a {
   position: absolute;
   right:0%;
   top:10px;
-  -webkit-animation: hot_balloon s 9linear infinite;
-  animation: hot_balloon 9s linear infinite;
+  -webkit-animation: hot_balloon 15s linear infinite;
+  animation: hot_balloon 15s linear infinite;
 }
 
 .sun {
@@ -116,8 +116,8 @@ a {
 .helium_balloon {
   right:6%;
   position: absolute;
-  -webkit-animation: balloon 12s linear infinite;
-  animation: balloon 12s linear infinite;
+  -webkit-animation: balloon 29s linear infinite;
+  animation: balloon 29s linear infinite;
 }
 
 .helium_image{
