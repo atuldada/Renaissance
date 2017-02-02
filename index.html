@@ -39,11 +39,19 @@
     <!--Content Starts-->
     <div class="container-fluid">
       <div class="animated_elements">
-        <div class="plane"></div>
-        <div class="hot_balloon"></div>
-        <div class="meteor"></div>
+        <div class="plane_container">
+          <div class="plane" id="plane"></div>
+        </div>
+        <div class="hot_balloon_container">
+          <div class="hot_balloon" id="hot_balloon"></div>
+        </div>
+        <div class="meteor_container">
+          <div class="meteor" id="meteor"></div>
+        </div>
         <div class="sun"></div>
-        <div class="helium_balloon" id="helium_balloon"></div>
+        <div class="helium_balloon" id="balloon_float">
+          <div class="helium_image" id="helium_image"></div>
+        </div>
       </div>
       <div class="main_body">
         <div class="row">
@@ -126,8 +134,55 @@
     <!--Inline JS-->
     <script>
       $( document ).ready(function() {
-       $('#helium_balloon').trigger('startRumble');
+        $('#helium_image').jrumble({
+          speed: 100,
+          x: 3,
+          y: 1,
+          rotation: 10
+        });
+       $('#helium_image').trigger('startRumble');
+
+       $('#hot_balloon').jrumble({
+         speed: 170,
+         x:  1,
+         y: 5,
+
+       });
+      $('#hot_balloon').trigger('startRumble');
+
+      $('#meteor').jrumble({
+        speed: 90,
+        x:  1,
+        y: 3,
+
       });
+     $('#meteor').trigger('startRumble');
+
+     $('#plane').jrumble({
+       speed: 90,
+       x:  1,
+       y: 1,
+
+     });
+    $('#plane').trigger('startRumble');
+
+      });
+
+      /* FUnction FOr Plane Wing Animation*/
+
+    function run(interval, frames) {
+    var int = 1;
+
+    function func() {
+        document.getElementsByClassName('plane')[0].id = "plane"+int;
+        int++;
+        if(int === frames) { int = 1; }
+    }
+
+    var swap = window.setInterval(func, interval);
+    }
+
+    run(40, 2); //milliseconds, frames
     </script>
     <script src="assests/js/jquery.jrumble.1.3.min.js"></script>
   </body>

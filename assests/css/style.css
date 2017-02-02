@@ -50,17 +50,23 @@ a {
   position: absolute;
   height: 100%;
   width: 98%;
-  z-index: 0/*Change to 10*/;
+  z-index: 10/*Change to 10*/;
 }
 .plane{
-  background: transparent url("../img/sprite.png") repeat scroll -23px -173px;
   height: 57px;
   width: 62px;
+}
+.plane_container{
   top: 131px;
   left: 2px;
   position: absolute;
+  -webkit-animation: plane 8s linear infinite;
+  animation: plane 8s linear infinite;
 }
-.plane2{
+#plane2{
+  background: transparent url("../img/sprite.png") repeat scroll -23px -173px;
+}
+#plane1{
   background: transparent url("../img/sprite.png") repeat scroll -88px -173px;
 }
 .hot_balloon {
@@ -68,40 +74,59 @@ a {
   background-position: -28px -19px;
   height: 53px;
   width: 54px;
-  position: absolute;
-  right:20px;
-  top:10px;
+}
 
+.hot_balloon_container{
+  position: absolute;
+  right:0%;
+  top:10px;
+  -webkit-animation: hot_balloon 12s linear infinite;
+  animation: hot_balloon 12s linear infinite;
 }
 
 .sun {
   background: url('../img/sprite.png');
-  background-position: -165px -154px;
-  height: 95px;
-  width: 108px;
+  background-position: -174px -161px;
+  height: 79px;
+  width: 85px;
   position: absolute;
-  top:10px;
+  top: 10px;
   left: 160px;
+  -webkit-animation: sunfading ws linear infinite;
+  animation: sunfading 2s linear infinite;
 }
+
 .meteor {
   background: url('../img/sprite.png');
   background-position: -130px -13px;
+  border-radius: 400px;
   height: 103px;
   width: 163px;
+  -webkit-animation: meteor_fade 10s linear infinite;
+  animation: meteor_fade 10s linear infinite;
+}
+
+.meteor_container{
   position: absolute;
   right:230px;
   top:10px;
+  -webkit-animation: meteor 10s linear infinite;
+  animation: meteor 10s linear infinite;
 }
 .helium_balloon {
-  background: url('../img/sprite.png');
-  background-position: -292px -60px;
-  height: 156px;
-  width: 118px;
   right:20px;
   position: absolute;
   -webkit-animation: balloon 12s linear infinite;
   animation: balloon 12s linear infinite;
 }
+
+.helium_image{
+  height: 156px;
+  width: 118px;
+  background: url('../img/sprite.png');
+  background-position: -292px -60px;
+}
+
 
 .floating_banner {
   background: url('../img/sprite.png');
@@ -283,11 +308,113 @@ a {
 /* Animations */
 /* Balloon Float Animation*/
 @keyframes balloon {
-    from {bottom: -15%;}
+    from {bottom: -10%;}
     to {bottom: 100%;}
 }
 
 @-webkit-keyframes  balloon {
-    from {bottom: -15%;}
+    from {bottom: -10%;}
     to {bottom: 100%;}
+}
+
+@keyframes plane {
+    from {top: 30%;
+      left:0%;
+    }
+    to {left: 30%;
+      top: -10%;
+    }
+}
+
+@-webkit-keyframes  plane {
+      from {top: 30%;
+        left:0%;
+      }
+      to {left: 30%;
+        top: -10%;
+      }
+}
+
+
+@keyframes hot_balloon {
+    from {right: -10%;}
+    to {right: 100%;}
+}
+
+@-webkit-keyframes  hot_balloon {
+    from {right: -10%;}
+    to {right: 100%;}
+}
+
+
+@keyframes meteor {
+  from {
+    right: 20%;
+    top: -60%:
+    max-height: 103px;
+    width: 163px;
+  }
+  to {
+    right: 80%;
+    top:  80%;
+    opacity: 50;
+    max-height: 0px;
+    width: 163px;
+  }
+}
+
+@-webkit-keyframes  meteor {
+  from {
+    right: 20%;
+    top: -60%:
+    max-height: 103px;
+    width: 163px;
+  }
+  to {
+    right: 80%;
+    top:  80%;
+    max-height: 0px;
+  }
+}
+
+
+@keyframes meteor_fade {
+  from {  max-height: 103px;
+          opacity: 100;
+  }
+  to {  max-height: 0px;
+        opacity: -80;
+  }
+}
+
+@-webkit-keyframes  meteor_fade {
+  from {  max-height: 103px;
+          opacity: 100;
+  }
+  to {  max-height: 0px;
+        opacity: -80;
+  }
+}
+
+
+
+@keyframes sunfading {
+  from {
+    border-radius: 0px;
+    opacity: 100;
+  }
+  to { border-radius: 100px;
+    opacity: 60;
+  }
+}
+
+@-webkit-keyframes  sunfading {
+  from {
+    border-radius: 0px;
+    opacity: 100;
+  }
+  to {
+    border-radius: 100px;
+    opacity: 60;
+  }
 }
