@@ -36,6 +36,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Material Design-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   </head>
   <body>
     <div class="top_bar">
@@ -43,12 +47,71 @@
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
       </div>
       <div class="top_text">
-      <center>About</center>
+        <!--
+      <center>About</center>-->
       </div>
     </div>
     <!--Content Starts-->
     <div class="container">
-      
+    <style>
+    .card-wide.mdl-card {
+      width: 80%;
+      margin-left: 10%;
+      height: 900px;
+      margin-bottom: 20px;
+      margin-top: -90px;
+    }
+    .card-wide > .mdl-card__title {
+      color: #fff;
+      height: 376px;
+      background: url('https://scontent.fjai1-1.fna.fbcdn.net/v/t31.0-8/12792167_1125094840856607_3408303222611448423_o.png?oh=76b491b69a67f0f2eff47556690d65f8&oe=5905947B') center / cover;
+    }
+    .card-wide > .mdl-card__menu {
+      color: #fff;
+    }
+    .content_box{
+      padding: 40px 50px;
+      font-family: 'Open Sans';
+      line-height: 34px;
+    }
+    </style>
+
+    <div class="card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text" style="font-weight:600;">About</h2>
+      </div>
+      <div class="mdl-card__supporting-text" style="padding: 30px 0px;">
+        <center>
+        <button onclick="document.getElementById('about-ren').style.display='none';document.getElementById('about-jecrc').style.display='block';" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background: #0eb06f; margin-left:50px;">
+          Renaissance
+        </button>
+        <button onclick="document.getElementById('about-jecrc').style.display='none';document.getElementById('about-ren').style.display='block';" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background: #0eb06f;">
+          JECRC Foundation
+        </button>
+      </center>
+      </div>
+      <div class="mdl-card__actions mdl-card--border content_box" id="about-ren">
+
+
+        Renaissance is a Techno/Cultural fest which provides a versatile platform for all the students to learn and explore the various dimensions of their personality. Renaissance is an opportunity which provides that special edge and makes every student strong and competent to face the world.
+        <br>
+        With events encompassing varied fields of science, technology and management. Renaissance , the annual techno-cultural fest of JECRC , invites students from all around the globe to put their inventiveness , ingenuity and aptitude to test at an unequaled level of competition. The fest offers its participants a wide spectrum of events to prove their mettle, while the huge amount of prize money is reflective of the magnificence of the same. Be a part of this techno-management extravaganza which is scheduled from 18-21 March 2016, as we once seek to captivate and enlighten you.
+
+      </div>
+      <div class="mdl-card__actions mdl-card--border content_box" id="about-jecrc" style="display:none">
+        JECRC Foundation has been in the forefront of creating excellence in technical education since the last fifteen years and is flamboyantly marching towards colorful dreams to accomplish and new milestones to achieve. The foundation is a pioneer education group with institutions for Engineering , Management and Pure & Applied Sciences and is ascribed as one of the leading education groups of North India. The foundation is nurturing more than nine thousand students enrolled with the following constituent institutes:
+            <br>
+            Jaipur Engineering College & Research Centre (JECRC)<br>
+            JECRC UDML College of Engineering (JECRC UDML)<br>
+            JECRC University (JU)
+
+      </div>
+      <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">share</i>
+        </button>
+      </div>
+    </div>
     </div>
     <!--Content Ends-->
 
