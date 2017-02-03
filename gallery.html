@@ -82,8 +82,9 @@
           <div class="col-md-4 image-container no_padding" style="background:url('http://www.jecrcrenaissance.in/assets/img/gallery/22.jpg');background-size:cover;height:50%;min-height:400px;">
           </div>
 
-          <div class="col-md-4 image-container no_padding" style="background:url('http://www.jecrcrenaissance.in/assets/img/gallery/24.jpg');background-size:cover;height:50%;min-height:400px;">
+          <div class="col-md-4 image-container no_padding" style="background:url('http://www.jecrcrenaissance.in/assets/img/gallery/25.jpg');background-size:cover;height:50%;min-height:400px;" onclick="document.getElementById('popup').style.display='block';return false;document.getElementById('img25').style.display='none';">
           </div>
+
 
       </div>
 
@@ -93,9 +94,12 @@
   </div>
     <!--Content Ends-->
     <!--Inline JS-->
-  <div class="popup" style="">
-    <a href="#" onclick="document.getElementById('popup').style.display='none';return false;" id="close_popup"></a>
-    <img src="http://www.jecrcrenaissance.in/assets/img/gallery/24.jpg" class="hover_image" />
+  <div class="popup" style="" id="popup">
+    <a href="#" onclick="document.getElementById('popup').style.display='none';return false;document.getElementById('img24').style.display='none';" id="close_popup">
+            <i class="fa fa-close" aria-hidden="true"></i>
+          </a>
+    <img src="http://www.jecrcrenaissance.in/assets/img/gallery/24.jpg" class="hover_image" id="img_24"/>
+    <img src="http://www.jecrcrenaissance.in/assets/img/gallery/25.jpg" class="hover_image" id="img_25"/>
   </div>
 
   </body>
