@@ -46,6 +46,8 @@ a {
 }
 .ren_bottom_container{
   width: 100%;
+  left: 0px;
+  padding: 0 4%;
 }
 .center_container_box{
   position: relative;
@@ -87,6 +89,8 @@ a {
   position: absolute;
   right:0%;
   top:10px;
+  -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
+  animation-delay: 5s;
   -webkit-animation: hot_balloon 15s linear infinite;
   animation: hot_balloon 15s linear infinite;
 }
@@ -429,12 +433,12 @@ a {
 
 
 @keyframes hot_balloon {
-    from {right: -10%;}
+    from {right: 0%;}
     to {right: 100%;}
 }
 
 @-webkit-keyframes  hot_balloon {
-    from {right: -10%;}
+    from {right: 0%;}
     to {right: 100%;}
 }
 
