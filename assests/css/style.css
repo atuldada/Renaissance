@@ -377,23 +377,30 @@ a {
 
 .prize_icon{
   float: left;
+  margin-top: 24px;
 }
 
 .prize_text{
   float:left;
   padding: 10px;
+  margin-top:
+  font-family: handycheera;
+  font-size: 25px;
+  margin-top: 17px;
+
 }
 
 .prize_title{
   font-weight: 800;
-  font-size: 16px;
+  font-size: 20px;
   color: rgb(72, 73, 83);
   margin-top: 5px;
 }
 
 .prize_amount{
-  font-weight: 600;
-  font-size: 22px;
+  font-weight: 700;
+  font-size: 32px;
+  font-family: handycheera;
   color: rgb(103, 83, 245);
 }
 
