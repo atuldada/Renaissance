@@ -2,9 +2,16 @@ body,html {
   margin: 0px !important;
   padding: 0px !important;
 }
+body{
+  overflow: hidden;
+}
 /*Background Image URl*/
+canvas{
+  display: block;
+  position: absolute;
+}
 body {
-  background: url('../img/background.png');
+  background: #2B022A;
   -webkit-animation: backgroundScroll 12s linear infinite;
   animation: backgroundScroll 12s linear infinite;
   width: 100%;
@@ -94,12 +101,53 @@ a {
   -webkit-animation: hot_balloon 15s linear infinite;
   animation: hot_balloon 15s linear infinite;
 }
+.small_planet_container{
+  background: url('../img/space/space.png');
+  background-size: cover;
 
+  position: absolute;;
+
+  height: 72px;
+  width: 77px;
+  -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
+  animation-delay:5s;
+  -webkit-animation: planet 3s linear infinite;
+  animation: planet 3s linear infinite;
+}
+
+.small_planet2_container{
+  background: url('../img/space/space3.png');
+  background-size: cover;
+
+  position: absolute;;
+
+  height: 72px;
+  width: 77px;
+  -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
+  animation-delay:5s;
+  -webkit-animation: plane2 5s linear infinite;
+  animation: planet2 5s linear infinite;
+}
+
+.big_planet_container{
+  background: url('../img/space/space2.png');
+  background-size: cover;
+
+  position: absolute;;
+
+  height: 472px;
+  width: 472px;
+  -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+  animation-delay: 2s;
+  -webkit-animation: big_planet 2s linear infinite;
+  animation: big_planet 2s linear infinite;
+
+}
 .sun {
   background: url('../img/sprite.png');
   background-position: -174px -161px;
-  height: 79px;
-  width: 85px;
+  height: 95px;
+  width: 95px;
   position: absolute;
   top: 10px;
   left: 160px;
@@ -241,12 +289,13 @@ a {
 }
 
 .renaissance_date {
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 700;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 164px;
+  width: 200px;
+  color: #9338ee;
 }
 
 .college_logo {
@@ -324,7 +373,7 @@ a {
 .renaissance_tagline {
   font-family: handycheera;
   padding-left: 6px;
-  color: #505050;
+  color: #fff;
   height: 52px;
   margin: 0px auto 8px auto;
   padding-top: 18px;
@@ -393,7 +442,7 @@ a {
 .prize_title{
   font-weight: 800;
   font-size: 20px;
-  color: rgb(72, 73, 83);
+  color: rgb(126, 127, 129);
   margin-top: 5px;
 }
 
@@ -449,6 +498,81 @@ a {
     to {right: 100%;}
 }
 
+@keyframes planet {
+    from {
+      top:10%;
+      left: -20%;
+      transform: rotate(0deg);
+    }
+    to {
+      top:50%;
+      left: 117%;
+      transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes  planet {
+  from {
+    top:10%;
+    left: -20%;
+    transform: rotate(0deg);
+  }
+  to {
+    top:50%;
+    left: 117%;
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes planet2 {
+    from {
+      top:60%;
+      left: -20%;
+      transform: rotate(0deg);
+    }
+    to {
+      top:20%;
+      left: 117%;
+      transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes  planet2 {
+  from {
+    top:60%;
+    left: -20%;
+    transform: rotate(0deg);
+  }
+  to {
+    top:20%;
+    left: 117%;
+    transform: rotate(360deg);
+  }
+}
+
+
+keyframes big_planet {
+  from {
+    top:24%;
+    left: -20%;
+  }
+  to {
+    top:24%;
+    left: 130%;
+  }
+}
+
+@-webkit-keyframes  big_planet {
+  from {
+    top:24%;
+    left: -20%;
+  }
+  to {
+    top:27%;
+    left: 170%;
+  }
+}
 
 @keyframes meteor {
   from {
