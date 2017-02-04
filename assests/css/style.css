@@ -1,6 +1,5 @@
-body,html {
-  margin: 0px !important;
-  padding: 0px !important;
+html {
+  background: #E2E4E5
 }
 body{
   overflow: hidden;
@@ -11,15 +10,37 @@ canvas{
   position: absolute;
 }
 body {
+
+  overflow-x: hidden;
+
+
   background: #2B022A;
   -webkit-animation: backgroundScroll 12s linear infinite;
   animation: backgroundScroll 12s linear infinite;
+
   width: 100%;
   height: 100%;
+  margin: 0px !important;
+  padding: 0px !important;
+
+  -webkit-animation: backgroundScroll 22s linear infinite;
+  animation: backgroundScroll 22s linear infinite;
+
+  background: url('../img/background.png');
+}
+::-moz-selection {
+    color: #FBFBFC;
+    background: #79BE43;
+}
+
+::selection {
+    color: #FBFBFC;
+    background: #79BE43;
 }
 .main_body{
-  height: 100%;
   overflow: hidden;
+
+  height: 100%;
 }
 .ren_bottom_container{
   position: absolute;
@@ -27,13 +48,16 @@ body {
 }
 @font-face {
     font-family: handycheera;
+
     src: url(../fonts/handy_cheera.woff);
 }
-
-
 @-webkit-keyframes backgroundScroll {
-from {background-position: 0 0;}
-to {background-position: -3820px 0;}
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -3820px 0;
+  }
 }
 
 @keyframes backgroundScroll {
@@ -45,61 +69,64 @@ a {
   text-decoration: none !important;
 }
 .top_ren_container {
-  width: 100%;
   position: relative;
+
+  width: 100%;
 }
 .ren_focus_container{
   width: 100%;
 }
 .ren_bottom_container{
   width: 100%;
-  left: 0px;
-  padding: 0 4%;
 }
 .center_container_box{
   position: relative;
   left: 50%;
+
   transform: translateX(-50%);
 }
 /*Css For Animated Elements*/
 .animated_elements{
   position: absolute;
-  height: 100%;
-  width: 98%;
   z-index: 0/*Change to 10*/;
+
+  width: 98%;
+  height: 100%;
 }
 .plane{
-  height: 57px;
-  width: 62px;
+  width: 65px;
+  height: 57px
 }
 .plane_container{
-  top: 131px;
-  left: 2px;
   position: absolute;
-  -webkit-animation: plane 9s linear infinite;
-  animation: plane 9s linear infinite;
+  top: 30%;
+  left: -12%;
+
+  -webkit-animation: plane 9s linear 1s infinite;
+  animation: plane 9s linear 1s infinite;
 }
 #plane2{
-  background: transparent url("../img/sprite.png") repeat scroll -21px -173px;
+  background: url("../img/balloon.png") no-repeat;
+
 }
 #plane1{
-  background: transparent url("../img/sprite.png") repeat scroll -88px -173px;
+  background: url("../img/plane.png") no-repeat;
 }
 .hot_balloon {
+  width: 54px;
+  height: 53px;
+
   background: url('../img/sprite.png');
   background-position: -28px -19px;
-  height: 53px;
-  width: 54px;
 }
 
 .hot_balloon_container{
   position: absolute;
-  right:0%;
   top:10px;
-  -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
-  animation-delay: 5s;
-  -webkit-animation: hot_balloon 15s linear infinite;
-  animation: hot_balloon 15s linear infinite;
+  right:0%;
+
+  -webkit-animation: hot_balloon 20s linear infinite;
+  animation: hot_balloon 20s linear infinite;
 }
 .small_planet_container{
   background: url('../img/space/space.png');
@@ -144,89 +171,131 @@ a {
 
 }
 .sun {
+
   background: url('../img/sprite.png');
   background-position: -174px -161px;
   height: 95px;
   width: 95px;
+
   position: absolute;
   top: 10px;
-  left: 160px;
-  -webkit-animation: pulsate 3.5s linear;
-  animation: pulsate 3.5s linear;
+  left: 7%;
+
+  width: 105px;
+  height: 79px;
+
+  -webkit-animation: pulsate 5s linear;
+  animation: pulsate 5s linear;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+
+  background: url('../img/sun.png') no-repeat;
+}
+@media screen and (max-width: 768px) {
+  .sun {
+    left: 2%;
+
+    margin-top:12px;
+
+    background-size: 80%
+  }
 }
 
 .meteor {
+  width: 163px;
+  height: 103px;
+
+  border-radius: 400px;
   background: url('../img/sprite.png');
   background-position: -130px -13px;
-  border-radius: 400px;
-  height: 103px;
-  width: 163px;
 /*  -webkit-animation: meteor_fade 10s linear infinite;
   animation: meteor_fade 10s linear infinite; */
 }
 
 .meteor_container{
   position: absolute;
-  right:230px;
   top:10px;
-  -webkit-animation-delay: 15s; /* Safari 4.0 - 8.0 */
-  animation-delay: 15s;
+  right:230px;
+
   -webkit-animation: meteor 2.5s linear infinite;
   animation: meteor 2.5s linear infinite;
+  -webkit-animation-delay: 15s; /* Safari 4.0 - 8.0 */
+  animation-delay: 15s;
 
 }
-.helium_balloon {
-  right:6%;
+/*.helium_balloon {
   position: absolute;
-  -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
-   animation-delay: 5s;
+  right:6%;
+
   -webkit-animation: balloon 19s linear infinite;
   animation: balloon 19s linear infinite;
+  -webkit-animation-delay: 5s;
+   animation-delay: 5s;
 
 }
 
 .helium_image{
-  height: 156px;
   width: 118px;
+  height: 156px;
+
   background: url('../img/sprite.png');
   background-position: -292px -60px;
-}
+}*/
 
 
 .floating_banner {
-  background: url('../img/sprite.png');
-  background-position: -25px -564px;
-  height: 113px;
-  width: 447px;
   position: relative;
   left: 50.7%;
+  top:-25%;
+  width: 447px;
+  height: 113px;
+
   transform: translateX(-50%);
+
+  background: url('../img/banner.png') no-repeat;
+}
+@media screen and (max-width: 768px) {
+  .floating_banner{
+    left: 62%;
+    margin-top:-25px;
+
+    background-size: 80%
+  }
 }
 .arrow{
   position: relative;
+  top: -20%;
   left: 50%;
-  transform: translateX(-50%);
-}
 
+  transform: translateX(-50%);
+
+  font-size: 35px;
+}
+@media screen and (max-width: 768px) {
+  .arrow {
+    top: -25%;
+
+    font-size:28px;
+  }
+}
 .fa-chevron-up{
-  font-size: 40px !important;
+  -webkit-animation: arrow 1s ease-out;
+  animation: arrow 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   /*
   color: white;
   -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: #2762ff;
   */
+
   color: #ffffff;
-  -webkit-text-stroke-width: 4px;
+
+  font-size: inherit !important;
+
+  -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #41434b;
-  -webkit-animation: arrow 1s ease-out;
-  animation: arrow 1s ease-out;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-
 }
-
 
 @keyframes arrow {
 	0%,100% {
@@ -252,17 +321,26 @@ a {
 }
 
 .renaissance_logo {
-  background: url('../img/sprite.png');
-  background-position: -368px -499px;
-  height: 59px;
-  left: 42%;
   position: relative;
-  transform: translateX(-50%);
+
   width: 321px;
+  height: 59px;
+  margin: 0 auto;
+
+  transform: translateX(-50%);
   -webkit-animation: pulsate 1.5s linear;
   animation: pulsate 1.5s linear;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+
+  background: url('../img/ren.png') no-repeat;
+}
+@media screen and (max-width:768px){
+  .renaissance_logo{
+    left: 4%;
+
+    background-size: 90%;
+  }
 }
 
 @keyframes pulsate {
@@ -297,81 +375,171 @@ a {
   width: 200px;
   color: #9338ee;
 }
+@media screen and (max-width:768px) {
+  .renaissance_date{
+    margin-top: -28px;
+  }
+}
 
 .college_logo {
-  background: url('../img/sprite.png');
-  background-position: -487px -53px;
   float: left;
+
   width: 140px;
   height: 111px;
+
+  background: url('../img/jecrc.png') no-repeat;
+}
+@media screen and (max-width: 768px) {
+  .college_logo {
+    float: none;
+
+    width: 100px;
+    height: 100px;
+    margin-top:48px;
+    margin-left: 72px;
+
+    background-size: 80%
+  }
 }
 
 .event_brand_partner {
-  background: url('../img/sprite.png');
-  background-position: -459px -180px;
   float: left;
+
+  width: 185px;
   height: 72px;
   margin-top: 18px;
-  width: 185px;
-}
 
+  background: url('../img/jio.png') no-repeat;
+}
+@media screen and (max-width: 768px) {
+  .event_brand_partner {
+    position: absolute;
+
+    float: right;
+
+    width: 150px;
+    height: 100px;
+    margin-top:-94px;
+    margin-left: 200px;
+
+    background-size: 110%
+  }
+}
 .middle_text {
   float: left;
-  font-weight: 700;
-  margin-left: 11px;
-  margin-right: 32px;
+
   margin-top: 44px;
+  margin-right: 32px;
+  margin-left: 11px;
+
+  font-weight: 700;
+}
+@media screen and (max-width:768px){
+  .middle_text {
+    margin-top: -74px;
+    margin-right: 32px;
+    margin-left: 170px;
+
+    text-align: center;
+
+    font-weight: 600;
+  }
 }
 
 .earth_menu_block {
-  margin-top: 22px;
+  margin-top: 10px;
 }
 
 .rotating_ren_earth {
-  background: url('../img/sprite.png');
-  background-position: -11px -278px;
-  height: 284px;
-  left: 50%;
   position: relative;
-  transform: translateX(-50%);
-  width: 290px;
-}
+  left: 53%;
 
+  width: 290px;
+  height: 284px;
+  margin-right: -50%;
+
+  transform: translateX(-50%);
+
+  background: url('../img/globe.png') no-repeat;
+  background-size: 70%;
+}
+@media screen and (max-width:768px){
+  .rotating_ren_earth {
+    margin:auto;
+
+  background-size: 60%
+  }
+}
 .menu_ren_play_button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 56px;
+  height: 57px;
+  margin: -70px 0 0 -42px;
+
+  cursor: pointer;
+  transform: translateX(-50%);
+
   background: url('../img/sprite.png');
   background-position: -324px -294px;
-  height: 57px;
-  width: 56px;
-  position: absolute;
-  cursor: pointer;
-  left: 49%;
-  transform: translateX(-50%);
-  top: 37%;
 }
-
+@media screen and (max-width:768px){
+  .menu_ren_play_button {
+    margin: -80px 0 0 -61px;
+  }
+}
 .prize_icon {
-  background: url('../img/sprite.png');
-  background-position: -319px -402px;
-  height: 82px;
   width: 85px;
+  height: 82px;
+
+  background: url('../img/trophy.png') no-repeat;
+}
+@media screen and (max-width:768px){
+  .prize_icon {
+    background-size: 80%;
+    padding-top:-320px;
+    margin-left: -10%;
+  }
+  .prize_text{
+    padding: 0;
+    margin-right: 40px;
+  }
+
 }
 .sponsors {
+  width: 394px;
   height: 108px;
   margin: 0 auto;
   padding-top: 18px;
-  width: 394px;
 }
 .present_text {
-  color: #505050;
-  font-weight: 700;
-  height: 60px;
-  margin-top: 23px;
-  margin: 0 auto;
-  padding-top: 18px;
   width: 394px;
+  height: 60px;
+  margin: 0 auto;
+  padding-top: 0px;
+
+  color: #505050;
+
+  font-weight: 700;
+
+  justify-content: center;
+}
+@media screen and (max-width:768px){
+  .present_text{
+    padding-top: 25px;
+
+    text-align: center;
+
+    font-size: 0.9em;
+  }
 }
 .renaissance_tagline {
-  font-family: handycheera;
+  width: 285px;
+  height: 52px;
+  margin: 0 auto;
+  padding-top: 10px;
   padding-left: 6px;
   color: #fff;
   height: 52px;
@@ -380,27 +548,43 @@ a {
   width: 285px;
   font-size: 19px;
 }
+@media screen and (max-width:768px){
+  .renaissance_tagline{
+    padding-top: 2px;
+
+    text-align: center;
+
+    font-size: 14px;
+  }
+
+}
 
 .ren_social_buttons{
   float: right;
+  margin-bottom: -12px;
 }
 
 .ren_share_circle {
   float: left;
-  width: 60px;
-  height: 60px;
-  border-radius: 30px;
-  padding: 20px 22px;
-  font-size: 20px;
+
+  width: 30px;
+  height: 30px;
   margin-right: 10px;
-  color: #FFF;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 5px 7px;
+
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  color: #FFF;
+  border-radius: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  font-size: 20px;
 }
 
 .ren_share_circle:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   cursor: pointer;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .ren_facebook_button{
@@ -421,6 +605,7 @@ a {
 
 .prize_bar{
   float:left;
+
   margin: -18px 0 0 28px;
 }
 
@@ -431,6 +616,7 @@ a {
 
 .prize_text{
   float:left;
+
   padding: 10px;
   margin-top:
   font-family: handycheera;
@@ -440,62 +626,96 @@ a {
 }
 
 .prize_title{
+
   font-weight: 800;
   font-size: 20px;
   color: rgb(126, 127, 129);
   margin-top: 5px;
+
+  color: rgb(72, 73, 83);
+
+  font-size: 16px;
+  font-weight: 800;
 }
 
 .prize_amount{
+
   font-weight: 700;
   font-size: 32px;
   font-family: handycheera;
   color: rgb(103, 83, 245);
+
+  font-size: 22px;
+  font-weight: 600;
 }
 
 /* Animations */
 /* Balloon Float Animation*/
 @keyframes balloon {
-    from {bottom: 0%;
-    right:6%;}
-    to {bottom: 100%;
-    right:86%;}
+    from {
+      right:6%;
+      bottom:0%;
+    }
+    to {
+      right:86%;
+      bottom: 100%;
+    }
 }
 
 @-webkit-keyframes  balloon {
-    from {bottom: 0%;
-    right:6%;}
-    to {bottom: 100%;
-    right:86%;}
+    from {
+    right:6%;bottom: 0%;}
+    to {
+    right:86%;bottom: 100%;}
 }
 
 @keyframes plane {
-    from {top: 30%;
-      left:0%;
-    }
-    to {left: 30%;
-      top: -10%;
-    }
+  from {
+    top: 30%;
+    left:-12%;
+
+    background-size: 110%
+  }
+  to {
+    top: -10%;
+    left: 42%;
+
+    background-size: 20%;
+  }
 }
 
 @-webkit-keyframes  plane {
-      from {top: 30%;
-        left:0%;
-      }
-      to {left: 30%;
-        top: -10%;
-      }
+  from {
+    top: 30%;
+    left:-15%;
+  }
+  to {
+    top: -10%;
+    left: 30%;
+  }
 }
 
 
 @keyframes hot_balloon {
-    from {right: 0%;}
-    to {right: 100%;}
+    from {
+      top: 8%;
+      right: -4%;
+    }
+    to {
+      top: 6%;
+      right: 100%;
+    }
 }
 
 @-webkit-keyframes  hot_balloon {
-    from {right: 0%;}
-    to {right: 100%;}
+  from {
+    top: 8%;
+    right: -4%;
+  }
+  to {
+    top: 6%;
+    right: 100%;
+  }
 }
 
 @keyframes planet {
@@ -576,17 +796,17 @@ keyframes big_planet {
 
 @keyframes meteor {
   from {
-    right: 0%;
     top: -60%:
     max-height: 103px;
-    width: 163px;
+    right: 0%;
   }
   to {
-    right: 30%;
     top: 30%;
-    opacity: 0;
+    right: 30%;
+
     max-height: 103px;
-    width: 163px;
+
+    opacity: 0;
   }
 }
 
@@ -610,24 +830,30 @@ keyframes big_planet {
 @keyframes meteor_fade {
   from {
     display: block;
+
     max-height: 103px;
+
     opacity: 100;
   }
   to {
      display: block;
+
      max-height: 0px;
+
      opacity: -80;
   }
 }
 
 @-webkit-keyframes  meteor_fade {
-  from {  max-height: 103px;
+  from {
+          display: block;  max-height: 103px;
+
           opacity: 100;
-          display: block;
   }
-  to {  max-height: 0px;
+  to {
+        display: block;  max-height: 0px;
+
         opacity: -80;
-        display: block;
   }
 }
 
@@ -635,21 +861,21 @@ keyframes big_planet {
 
 @keyframes sunfading {
   from {
-    border-radius: 0px;
     opacity: 100;
+    border-radius: 0px;
   }
-  to { border-radius: 100px;
-    opacity: 60;
+  to {
+    opacity: 60; border-radius: 100px;
   }
 }
 
 @-webkit-keyframes sunfading {
   from {
-    border-radius: 0px;
     opacity: 100;
+    border-radius: 0px;
   }
   to {
-    border-radius: 100px;
     opacity: 60;
+    border-radius: 100px;
   }
 }
