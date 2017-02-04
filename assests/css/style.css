@@ -1,9 +1,22 @@
 html {
   background: #E2E4E5
 }
+body{
+  overflow: hidden;
+}
 /*Background Image URl*/
+canvas{
+  display: block;
+  position: absolute;
+}
 body {
+
   overflow-x: hidden;
+
+
+  background: #2B022A;
+  -webkit-animation: backgroundScroll 12s linear infinite;
+  animation: backgroundScroll 12s linear infinite;
 
   width: 100%;
   height: 100%;
@@ -115,8 +128,55 @@ a {
   -webkit-animation: hot_balloon 20s linear infinite;
   animation: hot_balloon 20s linear infinite;
 }
+.small_planet_container{
+  background: url('../img/space/space.png');
+  background-size: cover;
 
+  position: absolute;;
+
+  height: 72px;
+  width: 77px;
+  -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
+  animation-delay:5s;
+  -webkit-animation: planet 3s linear infinite;
+  animation: planet 3s linear infinite;
+}
+
+.small_planet2_container{
+  background: url('../img/space/space3.png');
+  background-size: cover;
+
+  position: absolute;;
+
+  height: 72px;
+  width: 77px;
+  -webkit-animation-delay: 5s; /* Safari 4.0 - 8.0 */
+  animation-delay:5s;
+  -webkit-animation: plane2 5s linear infinite;
+  animation: planet2 5s linear infinite;
+}
+
+.big_planet_container{
+  background: url('../img/space/space2.png');
+  background-size: cover;
+
+  position: absolute;;
+
+  height: 472px;
+  width: 472px;
+  -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+  animation-delay: 2s;
+  -webkit-animation: big_planet 2s linear infinite;
+  animation: big_planet 2s linear infinite;
+
+}
 .sun {
+
+  background: url('../img/sprite.png');
+  background-position: -174px -161px;
+  height: 95px;
+  width: 95px;
+
   position: absolute;
   top: 10px;
   left: 7%;
@@ -307,16 +367,13 @@ a {
 }
 
 .renaissance_date {
+  font-size: 19px;
+  font-weight: 700;
   position: relative;
   left: 50%;
-
-  width: 164px;
-
   transform: translateX(-50%);
-
-  font-family: handycheera; /*change this font*/
-  font-size: 16px;
-  font-weight: 300;
+  width: 200px;
+  color: #9338ee;
 }
 @media screen and (max-width:768px) {
   .renaissance_date{
@@ -484,11 +541,12 @@ a {
   margin: 0 auto;
   padding-top: 10px;
   padding-left: 6px;
-
-  color: #505050;
-
-  font-family: handycheera;
-  font-size: 16px;
+  color: #fff;
+  height: 52px;
+  margin: 0px auto 8px auto;
+  padding-top: 18px;
+  width: 285px;
+  font-size: 19px;
 }
 @media screen and (max-width:768px){
   .renaissance_tagline{
@@ -498,6 +556,7 @@ a {
 
     font-size: 14px;
   }
+
 }
 
 .ren_social_buttons{
@@ -552,15 +611,25 @@ a {
 
 .prize_icon{
   float: left;
+  margin-top: 24px;
 }
 
 .prize_text{
   float:left;
 
   padding: 10px;
+  margin-top:
+  font-family: handycheera;
+  font-size: 25px;
+  margin-top: 17px;
+
 }
 
 .prize_title{
+
+  font-weight: 800;
+  font-size: 20px;
+  color: rgb(126, 127, 129);
   margin-top: 5px;
 
   color: rgb(72, 73, 83);
@@ -570,6 +639,10 @@ a {
 }
 
 .prize_amount{
+
+  font-weight: 700;
+  font-size: 32px;
+  font-family: handycheera;
   color: rgb(103, 83, 245);
 
   font-size: 22px;
@@ -645,6 +718,81 @@ a {
   }
 }
 
+@keyframes planet {
+    from {
+      top:10%;
+      left: -20%;
+      transform: rotate(0deg);
+    }
+    to {
+      top:50%;
+      left: 117%;
+      transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes  planet {
+  from {
+    top:10%;
+    left: -20%;
+    transform: rotate(0deg);
+  }
+  to {
+    top:50%;
+    left: 117%;
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes planet2 {
+    from {
+      top:60%;
+      left: -20%;
+      transform: rotate(0deg);
+    }
+    to {
+      top:20%;
+      left: 117%;
+      transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes  planet2 {
+  from {
+    top:60%;
+    left: -20%;
+    transform: rotate(0deg);
+  }
+  to {
+    top:20%;
+    left: 117%;
+    transform: rotate(360deg);
+  }
+}
+
+
+keyframes big_planet {
+  from {
+    top:24%;
+    left: -20%;
+  }
+  to {
+    top:24%;
+    left: 130%;
+  }
+}
+
+@-webkit-keyframes  big_planet {
+  from {
+    top:24%;
+    left: -20%;
+  }
+  to {
+    top:27%;
+    left: 170%;
+  }
+}
 
 @keyframes meteor {
   from {

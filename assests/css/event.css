@@ -9,8 +9,8 @@ body,html {
 body {
 
 
-  background: url('../img/background.png');
-
+  background: url('https://media.giphy.com/media/xT8qBhrlNooHBYR9f2/giphy.gif');
+  background-size: cover;
   -webkit-animation: backgroundScroll 12s linear infinite;
   animation: backgroundScroll 12s linear infinite;
   width: 100%;

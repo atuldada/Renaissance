@@ -36,14 +36,47 @@
     <!-- Font Awsome Icon-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-</head>
 
-<body>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
     <!--Content Starts-->
+    <canvas id="canvas"></canvas>
+    <div>
     <div class="container-fluid">
-        <div class="animated_elements">
-            <div class="plane_container">
-                <div class="plane" id="plane1"></div>
+      <div class="animated_elements">
+        <div class="plane_container">
+          <div class="plane" id="plane1"></div>
+        </div>
+        <div class="hot_balloon_container">
+          <div class="hot_balloon" id="hot_balloon"></div>
+        </div>
+        <!--
+        <div class="big_planet_container">
+        </div>-->
+        <div class="small_planet_container">
+        </div>
+        <div class="small_planet2_container">
+        </div>
+        <div class="meteor_container">
+          <div class="meteor" id="meteor"></div>
+        </div>
+        <!--
+        <div class="sun"></div>
+        <div class="helium_balloon" id="balloon_float">
+          <div class="helium_image" id="helium_image"></div>
+        </div>-->
+      </div>
+      <div class="main_body">
+        <div class="row">
+          <div class="container top_ren_container">
+
+            <div class="sponsors">
+              <div class="center_container_box">
+                <div class="college_logo"></div>
+                <div class="middle_text">&</div>
+                <div class="event_brand_partner"></div>
+              </div>
             </div>
             <div class="hot_balloon_container">
                 <div class="hot_balloon" id="hot_balloon"></div>
@@ -106,12 +139,14 @@
                         <div class="prize_icon"></div>
                         <div class="prize_text">
 
-                            <div class="prize_title">
-                                Prizes Worth
-                            </div>
-                            <div class="prize_amount">
-                                <center>8 Lacs</center>
-                            </div>
+
+                <div class="prize_title">
+                    Prizes Worth
+                </div>
+                <div class="prize_amount">
+                  <center style="margin-top: -19px;"><span style="font-size:50px";>8</span> Lacs</center>
+                </div>
+
 
                         </div>
                     </div>
@@ -169,8 +204,93 @@
 
             $('#plane').jrumble({
 
-            });
-            $('#plane').trigger('startRumble');
+      window.onload = function(){
+      	//canvas init
+      	var canvas = document.getElementById("canvas");
+      	var ctx = canvas.getContext("2d");
+
+      	//canvas dimensions
+      	var W = window.innerWidth;
+      	var H = window.innerHeight;
+      	canvas.width = W;
+      	canvas.height = H;
+
+      	//snowflake particles
+      	var mp = 95; //max particles
+      	var particles = [];
+      	for(var i = 0; i < mp; i++)
+      	{
+      		particles.push({
+      			x: Math.random()*W, //x-coordinate
+      			y: Math.random()*H, //y-coordinate
+      			r: Math.random()*6, //radius
+      			d: Math.random()*mp //density
+      		})
+      	}
+
+      	//Lets draw the flakes
+      	function draw()
+      	{
+      		ctx.clearRect(0, 0, W, H);
+
+      		ctx.fillStyle = "#d46877";
+      		ctx.beginPath();
+      		for(var i = 0; i < mp; i++)
+      		{
+      			var p = particles[i];
+      			ctx.moveTo(p.x, p.y);
+      			ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
+      		}
+      		ctx.fill();
+      		update();
+      	}
+
+      	//Function to move the snowflakes
+      	//angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
+      	var angle = 0;
+      	function update()
+      	{
+      		angle += 0.01;
+      		for(var i = 0; i < mp; i++)
+      		{
+      			var p = particles[i];
+      			//Updating X and Y coordinates
+      			//We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
+      			//Every particle has its own density which can be used to make the downward movement different for each flake
+      			//Lets make it more random by adding in the radius
+      			p.y += Math.cos(angle+p.d) + 1 + p.r/2;
+      			p.x += Math.sin(angle) * 2;
+
+      			//Sending flakes back from the top when it exits
+      			//Lets make it a bit more organic and let flakes enter from the left and right also.
+      			if(p.x > W+5 || p.x < -5 || p.y > H)
+      			{
+      				if(i%3 > 0) //66.67% of the flakes
+      				{
+      					particles[i] = {x: Math.random()*W, y: -10, r: p.r, d: p.d};
+      				}
+      				else
+      				{
+      					//If the flake is exitting from the right
+      					if(Math.sin(angle) > 0)
+      					{
+      						//Enter from the left
+      						particles[i] = {x: -5, y: Math.random()*H, r: p.r, d: p.d};
+      					}
+      					else
+      					{
+      						//Enter from the right
+      						particles[i] = {x: W+5, y: Math.random()*H, r: p.r, d: p.d};
+      					}
+      				}
+      			}
+      		}
+      	}
+
+      	//animation loop
+      	setInterval(draw,8);
+      }
+
 
         });
     </script>
